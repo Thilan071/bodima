@@ -32,8 +32,8 @@ const TopNavigation = () => {
               className="text-gray-500 hover:text-blue-600 font-normal text-base cursor-pointer"
             >
               How it Works
-            </span>
-            <span 
+            </span>            <span 
+              onClick={() => navigate('/list-property')}
               className="text-gray-500 hover:text-blue-600 font-normal text-base cursor-pointer"
             >
               List Property

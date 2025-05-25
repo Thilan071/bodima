@@ -2,8 +2,10 @@ import React from 'react';
 import { UserPlus, Search, MessageCircle, Home, CheckCircle, Star, Shield, Clock } from 'lucide-react';
 import TopNavigation from '../topNavigation/topNavigation';
 import Footer from '../footer/footer';
+import { useNavigate } from 'react-router-dom';
 
 export default function HowItWorksComponent() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <TopNavigation />
@@ -227,7 +229,10 @@ export default function HowItWorksComponent() {
               <button className="bg-white text-gray-800 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
                 Sign Up as Student
               </button>
-              <button className="bg-transparent border border-white text-white px-6 py-2 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors">
+              <button 
+                onClick={() => navigate('/list-property')}
+                className="bg-transparent border border-white text-white px-6 py-2 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors cursor-pointer"
+              >
                 List Your Property
               </button>
             </div>
