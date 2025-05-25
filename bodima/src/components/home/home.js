@@ -5,10 +5,12 @@ import Footer from '../footer/footer';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <TopNavigation />
+    <div className="min-h-screen bg-white">      <TopNavigation />
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+      <div className="bg-gradient-to-r from-[#5409DA] to-[#BBFBFF] text-white py-20" 
+          style={{ 
+            backgroundImage: 'linear-gradient(to right, #5409DA, #4E71FF, #8DD8FF, #BBFBFF)' 
+          }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-4">Find Your Perfect</h1>
           <h2 className="text-4xl font-light mb-8 text-blue-200">Student Accommodation</h2>
