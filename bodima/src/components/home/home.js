@@ -1,9 +1,12 @@
 import React from 'react';
 import { Search, MessageCircle, Shield, MapPin, Clock, Star } from 'lucide-react';
+import TopNavigation from '../topNavigation/topNavigation';
+import Footer from '../footer/footer';
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
+      <TopNavigation />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
@@ -226,9 +229,10 @@ const Home = () => {
                 <p className="text-gray-500 text-sm">SLIIT</p>
               </div>
             </div>
-          </div>
-        </div>
+          </div>        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
