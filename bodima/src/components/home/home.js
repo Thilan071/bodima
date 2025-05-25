@@ -1,11 +1,18 @@
 import React from 'react';
 import { Search, MessageCircle, Shield, MapPin, Clock, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import TopNavigation from '../topNavigation/topNavigation';
 import Footer from '../footer/footer';
 
 const Home = () => {
+  const navigate = useNavigate();
+  
+  const handleSearchClick = () => {
+    navigate('/search');
+  };
+
   return (
-    <div className="min-h-screen bg-white">      <TopNavigation />      {/* Hero Section */}      <div className="text-white py-20" 
+    <div className="min-h-screen bg-white"><TopNavigation />      {/* Hero Section */}      <div className="text-white py-20" 
           style={{ 
             background: 'linear-gradient(90deg, #5409DA 0%, #4E71FF 50%, #8DD8FF 100%)'
           }}><div className="container mx-auto px-4 text-center">
@@ -60,9 +67,12 @@ const Home = () => {
                   className="w-full p-3 border border-gray-300 rounded-md text-gray-700"
                 />
               </div>
-            </div>
-            <div className="mt-6">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium transition duration-200">
+            </div>            <div className="mt-6">
+              <button 
+                onClick={handleSearchClick}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium transition duration-200 flex items-center justify-center gap-2"
+              >
+                <Search className="w-5 h-5" />
                 Find Boarding Places
               </button>
             </div>
@@ -90,13 +100,19 @@ const Home = () => {
         </div>
       </div>
 
-      {/* How BoardingLK Works */}
-      <div className="py-16">
+      {/* How BoardingLK Works */}      <div className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">How BoardingLK Works</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
+          <h2 
+            className="text-3xl font-bold text-center mb-12 text-gray-800 cursor-pointer hover:text-blue-600 transition-colors"
+            onClick={() => navigate('/how-it-works')}
+          >
+            How BoardingLK Works
+          </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div 
+              className="text-center cursor-pointer hover:shadow-md p-4 rounded-lg transition-shadow"
+              onClick={() => navigate('/how-it-works')}
+            >
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="w-8 h-8 text-blue-600" />
               </div>
@@ -106,7 +122,10 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="text-center">
+            <div 
+              className="text-center cursor-pointer hover:shadow-md p-4 rounded-lg transition-shadow"
+              onClick={() => navigate('/how-it-works')}
+            >
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-8 h-8 text-blue-600" />
               </div>
@@ -116,7 +135,10 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="text-center">
+            <div 
+              className="text-center cursor-pointer hover:shadow-md p-4 rounded-lg transition-shadow"
+              onClick={() => navigate('/how-it-works')}
+            >
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-600" />
               </div>
