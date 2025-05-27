@@ -186,11 +186,9 @@ const Support = () => {
                   placeholder="Describe your issue or question in detail"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
                 ></textarea>
-              </div>
-
-              <button
+              </div>              <button
                 onClick={handleSubmit}
-                className="w-full bg-purple-600 text-white py-3 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-medium transition-colors"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-400 text-white py-3 px-4 rounded-md hover:from-purple-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-medium transition-all duration-200"
               >
                 Send Message
               </button>
