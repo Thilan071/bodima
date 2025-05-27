@@ -39,6 +39,7 @@ const TopNavigation = () => {
               List Property
             </span>
             <span 
+              onClick={() => navigate('/support')}
               className="text-gray-500 hover:text-blue-600 font-normal text-base cursor-pointer"
             >
               Support
