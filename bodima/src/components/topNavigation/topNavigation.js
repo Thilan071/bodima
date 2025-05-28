@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Home } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import LoginModal from '../login/loginModal';
 
 const TopNavigation = () => {
   const navigate = useNavigate();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  
+  const openLoginModal = () => {
+    setIsLoginModalOpen(true);
+  };
+  
+  const closeLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
+  
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
       <div className="container mx-auto px-4">
@@ -44,16 +55,22 @@ const TopNavigation = () => {
             >
               Support
             </span>
-          </div>
-
-          {/* Login and Sign Up */}
+          </div>          {/* Login and Sign Up */}
           <div className="flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-blue-600 font-medium">
+            <button 
+              onClick={openLoginModal} 
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
               Login
-            </button>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-200">
+            </button>            <button 
+              onClick={openLoginModal}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-200"
+            >
               Sign Up
             </button>
+            
+            {/* Login Modal */}
+            <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
           </div>
         </div>
       </div>
