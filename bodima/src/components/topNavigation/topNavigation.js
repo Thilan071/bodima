@@ -2,17 +2,29 @@ import React, { useState } from 'react';
 import { Home } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import LoginModal from '../login/loginModal';
+import SignupModal from '../signup/signupModal';
 
 const TopNavigation = () => {
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   
   const openLoginModal = () => {
     setIsLoginModalOpen(true);
+    setIsSignupModalOpen(false);
   };
   
   const closeLoginModal = () => {
     setIsLoginModalOpen(false);
+  };
+  
+  const openSignupModal = () => {
+    setIsSignupModalOpen(true);
+    setIsLoginModalOpen(false);
+  };
+  
+  const closeSignupModal = () => {
+    setIsSignupModalOpen(false);
   };
   
   return (
